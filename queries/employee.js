@@ -10,7 +10,7 @@ class Employee {
     return this.connection
       .promise()
       .query(
-        'SELECT employees.id, employees.first_name, employees.last_name, roles.title, departments.name AS department, roles.salary, CONCAT(managers.first_name, " ", managers.last_name) AS manager ' +
+        'SELECT employees.id, employees.first_name, employees.last_name, roles.title, departments.name_dept AS department, roles.salary, CONCAT(managers.first_name, " ", managers.last_name) AS manager ' +
           "FROM employees " +
           "LEFT JOIN roles ON employees.role_id = roles.id " +
           "LEFT JOIN departments ON roles.department_id = departments.id " +
@@ -20,14 +20,12 @@ class Employee {
 
   // method to create a new employee
   create(firstName, lastName, roleId, managerId) {
-    return this.connection
-      .promise()
-      .query("INSERT INTO employees SET ?", {
-        first_name: firstName,
-        last_name: lastName,
-        role_id: roleId,
-        manager_id: isNaN(managerId) ? null : managerId,
-      });
+    return this.connection.promise().query("INSERT INTO employees SET ?", {
+      first_name: firstName,
+      last_name: lastName,
+      role_id: roleId,
+      manager_id: isNaN(managerId) ? null : managerId,
+    });
   }
 
   // method to update an employee's role

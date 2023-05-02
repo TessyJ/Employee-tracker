@@ -1,3 +1,4 @@
+// packages to run the apps
 const inquirer = require("inquirer");
 const Department = require("./queries/department");
 const Role = require("./queries/role");
@@ -273,6 +274,6 @@ inquirer
         break;
       case "Exit":
         process.exit();
-        break;
+        // break;
     }
   });
