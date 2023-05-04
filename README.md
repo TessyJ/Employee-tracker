@@ -2,15 +2,15 @@
 
 # Project URL
 
-https://github.com/TessyJ/Note-Taker
+https://github.com/TessyJ/Employee-tracker
 
 # Project Repository
 
-https://tessyj.github.io/Note-Taker/
+https://tessyj.github.io/Employee-tracker/
 
 # Walkthrough Video
 
-https://short-note-taker.herokuapp.com/
+https://drive.google.com/file/d/1HwNvK9vKSM2A9P-Wiwf59E8vJAQ0502l/view
 
 # Project Description
 
@@ -29,4 +29,3 @@ The walkthrough video was able to demonstrate viewing, adding and deleting both 
 ![screenshot8](images/shot8.png)
 ![screenshot9](images/shot9.png)
 ![screenshot10](images/shot10.png)
-![screenshot11](images/shot11.png)
