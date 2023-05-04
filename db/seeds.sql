@@ -31,11 +31,11 @@ INSERT INTO employees ( first_name, last_name, role_id, manager_id)
 VALUES
 ('John', 'Doe', 1, 3),
 ('Mike', 'Chan', 2, 1),
-( 'Mayowa', 'Michael', 4, NULL),
+('Mayowa', 'Michael', 4, NULL),
 ('Ashley', 'Rodriguez', 3, null),
 ('Kevin', 'Tupik', 4, 3), 
-('Malia', 'Brown', 5, null),
- ('Sarah', 'Lourd', 6, null), 
- ('Tom', 'Allen', 7, 6);
+('Malia', 'Brown', 5, null)
+
+
 
  

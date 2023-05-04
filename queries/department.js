@@ -11,10 +11,10 @@ class Department {
   }
 
   // method to create a new department
-  create(name) {
+  create(name_dept) {
     return this.connection
       .promise()
-      .query("INSERT INTO departments SET ?", { name });
+      .query("INSERT INTO departments SET ?", { name_dept });
   }
 
   // Delete Department

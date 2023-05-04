@@ -7,15 +7,19 @@ class Employee {
 
   // method to get all employees
   findAll() {
-    return this.connection
-      .promise()
-      .query(
-        'SELECT employees.id, employees.first_name, employees.last_name, roles.title, departments.name_dept AS department, roles.salary, CONCAT(managers.first_name, " ", managers.last_name) AS manager ' +
-          "FROM employees " +
-          "LEFT JOIN roles ON employees.role_id = roles.id " +
-          "LEFT JOIN departments ON roles.department_id = departments.id " +
-          "LEFT JOIN employees managers ON employees.manager_id = managers.id"
-      );
+    return this.connection.promise().query(
+      // 'SELECT employees.id, employees.first_name, employees.last_name, roles.title, departments.name_dept, roles.salary, CONCAT(managers.first_name, " ", manager.last_name) AS manager ' +
+      //   "FROM employees " +
+      //   "LEFT JOIN roles ON employees.role_id = roles.id " +
+      //   "LEFT JOIN departments ON roles.department_id = departments.id " +
+      //   "LEFT JOIN employees managers ON employees.manager_id = manager.id"
+
+      `SELECT employeeS.id, employees.first_name, employees.last_name, roles.title, departments.name_dept, roles.salary, CONCAT(manager.first_name,'', manager.last_name) AS manager
+FROM employees 
+LEFT JOIN employees manager ON manager.id = employees.manager_id
+INNER JOIN roles ON employees.role_id = roles.id
+INNER JOIN departments ON departments.id = roles.department_id;`
+    );
   }
 
   // method to create a new employee
